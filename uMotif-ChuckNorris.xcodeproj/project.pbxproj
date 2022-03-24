@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5B5219827EC6DA6006A25B0 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5219727EC6DA6006A25B0 /* Array+extension.swift */; };
 		B5EF193E27EA73EB00A31FB0 /* uMotif_ChuckNorrisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF193D27EA73EB00A31FB0 /* uMotif_ChuckNorrisApp.swift */; };
 		B5EF194027EA73EB00A31FB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF193F27EA73EB00A31FB0 /* ContentView.swift */; };
 		B5EF194227EA73ED00A31FB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EF194127EA73ED00A31FB0 /* Assets.xcassets */; };
@@ -14,6 +15,9 @@
 		B5EF194F27EA73ED00A31FB0 /* uMotif_ChuckNorrisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF194E27EA73ED00A31FB0 /* uMotif_ChuckNorrisTests.swift */; };
 		B5EF195927EA73EE00A31FB0 /* uMotif_ChuckNorrisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF195827EA73EE00A31FB0 /* uMotif_ChuckNorrisUITests.swift */; };
 		B5EF195B27EA73EE00A31FB0 /* uMotif_ChuckNorrisUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF195A27EA73EE00A31FB0 /* uMotif_ChuckNorrisUITestsLaunchTests.swift */; };
+		B5EF196D27EB178800A31FB0 /* CNJokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF196C27EB178800A31FB0 /* CNJokeResponse.swift */; };
+		B5EF197127EB252900A31FB0 /* ContentViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF197027EB252900A31FB0 /* ContentViewVM.swift */; };
+		B5EF197627EB88D700A31FB0 /* CNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF197527EB88D700A31FB0 /* CNService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B5B5219727EC6DA6006A25B0 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
 		B5EF193A27EA73EB00A31FB0 /* uMotif-ChuckNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uMotif-ChuckNorris.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EF193D27EA73EB00A31FB0 /* uMotif_ChuckNorrisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uMotif_ChuckNorrisApp.swift; sourceTree = "<group>"; };
 		B5EF193F27EA73EB00A31FB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +49,9 @@
 		B5EF195427EA73EE00A31FB0 /* uMotif-ChuckNorrisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "uMotif-ChuckNorrisUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EF195827EA73EE00A31FB0 /* uMotif_ChuckNorrisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uMotif_ChuckNorrisUITests.swift; sourceTree = "<group>"; };
 		B5EF195A27EA73EE00A31FB0 /* uMotif_ChuckNorrisUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uMotif_ChuckNorrisUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B5EF196C27EB178800A31FB0 /* CNJokeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNJokeResponse.swift; sourceTree = "<group>"; };
+		B5EF197027EB252900A31FB0 /* ContentViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewVM.swift; sourceTree = "<group>"; };
+		B5EF197527EB88D700A31FB0 /* CNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5B5219627EC6D87006A25B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B5B5219727EC6DA6006A25B0 /* Array+extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B5EF193127EA73EB00A31FB0 = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +111,11 @@
 			isa = PBXGroup;
 			children = (
 				B5EF193D27EA73EB00A31FB0 /* uMotif_ChuckNorrisApp.swift */,
-				B5EF193F27EA73EB00A31FB0 /* ContentView.swift */,
+				B5EF196727EB172900A31FB0 /* Views */,
+				B5EF196927EB174100A31FB0 /* ViewModel */,
+				B5EF196827EB173500A31FB0 /* Model */,
+				B5EF197427EB88BA00A31FB0 /* Services */,
+				B5B5219627EC6D87006A25B0 /* Extensions */,
 				B5EF194127EA73ED00A31FB0 /* Assets.xcassets */,
 				B5EF194327EA73ED00A31FB0 /* Preview Content */,
 			);
@@ -125,6 +145,38 @@
 				B5EF195A27EA73EE00A31FB0 /* uMotif_ChuckNorrisUITestsLaunchTests.swift */,
 			);
 			path = "uMotif-ChuckNorrisUITests";
+			sourceTree = "<group>";
+		};
+		B5EF196727EB172900A31FB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5EF193F27EA73EB00A31FB0 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5EF196827EB173500A31FB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5EF196C27EB178800A31FB0 /* CNJokeResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B5EF196927EB174100A31FB0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B5EF197027EB252900A31FB0 /* ContentViewVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B5EF197427EB88BA00A31FB0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B5EF197527EB88D700A31FB0 /* CNService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +310,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5EF194027EA73EB00A31FB0 /* ContentView.swift in Sources */,
+				B5EF196D27EB178800A31FB0 /* CNJokeResponse.swift in Sources */,
 				B5EF193E27EA73EB00A31FB0 /* uMotif_ChuckNorrisApp.swift in Sources */,
+				B5B5219827EC6DA6006A25B0 /* Array+extension.swift in Sources */,
+				B5EF197627EB88D700A31FB0 /* CNService.swift in Sources */,
+				B5EF197127EB252900A31FB0 /* ContentViewVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

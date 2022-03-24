@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct uMotif_ChuckNorrisApp: App {
+            
     var body: some Scene {
         WindowGroup {
             ContentView()
