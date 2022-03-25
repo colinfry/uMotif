@@ -24,20 +24,45 @@ struct ContentView: View {
         _viewModel = StateObject(wrappedValue: ContentViewVM())
     }
     
-    var body: some View {
+    var body: some View {        
         NavigationView {
             List {
-                if viewModel.jokes?.isEmpty ?? true {
-                    Text("It's no joke!")
-                } else {
-                    ForEach(viewModel.jokes!) { joke in
-                        Text(joke.joke)
-                            .font(.body)
-                            .padding(5)
+                switch viewModel.vmState {
+                    
+                case .loading:
+                    Text("Loading jokes")
+                case .success(let data):
+                    if data != nil {
+                        ForEach(data!, id: \.id) { joke in
+                            Text(joke.joke)
+                                .font(.body)
+                                .padding(5)
+                        }
+                    } else {
+                        Text("It's no joke!")
                     }
+                default:
+                    Text("It's no joke! There's been an error")
                 }
             }
             .navigationTitle("55 Terrible Jokes")
+        }
+        .task {
+            await viewModel.loadModelData()
+        }
+        .alert("Error",
+               isPresented: $viewModel.hasError,
+               presenting: viewModel.vmState) { detail in
+            
+            Button("Retry") {
+                Task {
+                    await viewModel.loadModelData()
+                }
+            }
+        } message: { detail in
+            if case let .fail(error) = detail {
+                Text(error.localizedDescription)
+            }
         }
     }
 }

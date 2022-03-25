@@ -21,6 +21,7 @@ class uMotif_ChuckNorrisTests: XCTestCase {
     func testCNService() async {
         let cnJokesURL = "https://api.icndb.com/jokes/random/55?exclude=[explicit]"
         let cnService = CNService()
+        
         var response: CNJokeResponse?
         var responseError: Error?
         
@@ -36,11 +37,37 @@ class uMotif_ChuckNorrisTests: XCTestCase {
     }
     
     func testContentViewVM() async {
-        Task {
-            let contentViewVM = await ContentView.ContentViewVM()
-            let jokes = await contentViewVM.jokes
-            XCTAssert(jokes != nil)
-            XCTAssert(jokes?.count == 55)
-        } 
+        let contentViewVM = await ContentView.ContentViewVM()
+        var state = await contentViewVM.vmState
+        let error = await contentViewVM.hasError
+        
+        switch state {
+        case .na:
+            print("pass")
+        case .loading:
+            XCTFail()
+        case .success(_):
+            XCTFail()
+        case .fail(_):
+            XCTFail()
+        }
+        
+        XCTAssert(error == false)
+        
+        await contentViewVM.loadModelData()
+        state = await contentViewVM.vmState
+        
+        switch state {
+        case .na:
+            XCTFail()
+        case .loading:
+            XCTFail()
+        case .success(let data):
+            XCTAssertTrue(data?.count == 55)
+        case .fail(_):
+            XCTFail()
+        }
+        
+        XCTAssert(error == false)
     }
 }

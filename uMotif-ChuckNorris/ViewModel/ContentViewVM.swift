@@ -7,27 +7,39 @@
 
 import SwiftUI
 
+enum VMState {
+    case na
+    case loading
+    case success(data: [CNJoke]?)
+    case fail(error: Error)
+}
+
 extension ContentView {
+    
     @MainActor
     class ContentViewVM: ObservableObject {
         
-        @Published var jokes: [CNJoke]?
+        @Published var vmState: VMState = .na
+        @Published var hasError: Bool = false
         
         private let cnJokesURL = "https://api.icndb.com/jokes/random/55?exclude=[explicit]"
         private let cnService = CNService()
         
-        init() {
-            loadModelData()
-        }
-        
-        private func loadModelData() {
-            Task {
-                if let jokesResponse = try? await cnService.fetchJokes(urlString: cnJokesURL) {
-                    jokes = jokesResponse.jokes?.unique{ $0.id == $1.id }
+        func loadModelData() async {
+            
+            vmState = .loading
+            hasError = false
+            
+            do {
+                let jokesResponse = try await cnService.fetchJokes(urlString: cnJokesURL)
+                if let jokes = jokesResponse.jokes?.unique(selector: { $0.id == $1.id }) {
+                    vmState = .success(data: jokes)
                 } else {
-                    // Error handling to be added here
-                    jokes = []
+                    throw ServiceError.failToDecode
                 }
+            } catch {
+                vmState = .fail(error: error)
+                hasError = true
             }
         }
     }
