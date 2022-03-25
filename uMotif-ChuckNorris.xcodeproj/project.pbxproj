@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B5A25F3B27EE08BC00E51873 /* Error+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A25F3A27EE08BC00E51873 /* Error+extension.swift */; };
 		B5B5219827EC6DA6006A25B0 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5219727EC6DA6006A25B0 /* Array+extension.swift */; };
 		B5EF193E27EA73EB00A31FB0 /* uMotif_ChuckNorrisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF193D27EA73EB00A31FB0 /* uMotif_ChuckNorrisApp.swift */; };
 		B5EF194027EA73EB00A31FB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EF193F27EA73EB00A31FB0 /* ContentView.swift */; };
@@ -39,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B5A25F3A27EE08BC00E51873 /* Error+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+extension.swift"; sourceTree = "<group>"; };
 		B5B5219727EC6DA6006A25B0 /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
 		B5EF193A27EA73EB00A31FB0 /* uMotif-ChuckNorris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uMotif-ChuckNorris.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EF193D27EA73EB00A31FB0 /* uMotif_ChuckNorrisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uMotif_ChuckNorrisApp.swift; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				B5B5219727EC6DA6006A25B0 /* Array+extension.swift */,
-				B5A25F3A27EE08BC00E51873 /* Error+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -316,7 +313,6 @@
 				B5EF196D27EB178800A31FB0 /* CNJokeResponse.swift in Sources */,
 				B5EF193E27EA73EB00A31FB0 /* uMotif_ChuckNorrisApp.swift in Sources */,
 				B5B5219827EC6DA6006A25B0 /* Array+extension.swift in Sources */,
-				B5A25F3B27EE08BC00E51873 /* Error+extension.swift in Sources */,
 				B5EF197627EB88D700A31FB0 /* CNService.swift in Sources */,
 				B5EF197127EB252900A31FB0 /* ContentViewVM.swift in Sources */,
 			);
